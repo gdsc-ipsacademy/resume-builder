@@ -4,6 +4,7 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
     const [awards, setAwards] = useState([
         { title: '', date: '' }
     ]);
+    const [entered, setEntered] = useState(false);
 
     const addHandler = () => {
         let newF = { title: '', date: '' }
@@ -29,11 +30,21 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
         }
         return ans;
     }
+
     useImperativeHandle(_ref, () => ({
         getHonorsDeets: () => {
             return awards;
         },
     }));
+
+    function submitHandler(e) {
+        e.preventDefault()
+        setEntered(true)
+
+        if (validateForm(awards)) {
+            props.next()
+        }
+    }
     return (
         <div>
             <form>
@@ -41,8 +52,14 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
                 {awards.map((input, idx) => {
                     return (
                         <React.Fragment key={idx}>
+                            {!input.title && entered ?
+                                (<span> Title is required </span>) : null}
+
                             <input type='text' placeholder='Name of Honor/Award/Grant'
                                 value={input.title} name='title' onChange={(e) => handleFormChange(idx, e)} />
+
+                            {!input.date && entered ?
+                                (<span> Date is required </span>) : null}
 
                             <input type='text' placeholder='Date'
                                 value={input.date} name='date' onChange={(e) => handleFormChange(idx, e)} />
@@ -59,8 +76,10 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
 
                 <input
                     type='submit'
-                    onClick={props.next}
-                    disabled={!(validateForm(awards))} />
+                    onClick={e => submitHandler(e)}
+                />
+
+
             </form>
 
 

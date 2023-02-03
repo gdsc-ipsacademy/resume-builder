@@ -48,7 +48,7 @@ const FormContainer = () => {
     }
     const getExperienceDetails = () => {
         const expDetails = expDetailsRef.current.getExpDeets()
-        // console.log(expDetails)
+        console.log(expDetails)
         setExpDeets(expDetails)
         nextStep()
     }
@@ -130,7 +130,7 @@ const FormContainer = () => {
                 return (<>
                     <ResumeRender />
                     <ReactToPrint
-                        trigger={() => <button>Print this out!</button>}
+                        trigger={() => <button>Download this out!</button>}
                         content={() => componentRef}
                     />
                 </>)
@@ -179,33 +179,32 @@ const FormContainer = () => {
 
                     </div>
                 </div>
-                <div className='workEx'>
-                    <h2 className='heading'>
-                        Work Experience
-                    </h2>
-                    <div className='workEx-info'>
-                        {expDeets.map((info, idx) => (
-                            <div className='info' key={idx}>
-                                <div className='info1'>
-                                    <p><b>{info.company}</b></p>
-                                    <p>{info.jobTitle}</p>
-                                    <ul>
-                                        <li>{info.bulletPt1}</li>
-                                        <li>{info.bulletPt2}</li>
-                                        <li>{info.bulletPt3}</li>
-                                    </ul>
+                {!expDeets.skip ? (
+                    <div className='workEx'>
+                        <h2 className='heading'>
+                            Work Experience
+                        </h2>
+                        <div className='workEx-info'>
+                            {expDeets.map((info, idx) => (
+                                <div className='info' key={idx}>
+                                    <div className='info1'>
+                                        <p><b>{info.company}</b></p>
+                                        <p>{info.jobTitle}</p>
+                                        <ul>
+                                            <li>{info.bulletPt1}</li>
+                                            <li>{info.bulletPt2}</li>
+                                            <li>{info.bulletPt3}</li>
+                                        </ul>
+                                    </div>
+                                    <div className='info2'>
+                                        <p>{info.address}</p>
+                                        <p>{`${info.from} - ${info.to}`}</p>
+                                    </div>
                                 </div>
-                                <div className='info2'>
-                                    <p>{info.address}</p>
-                                    <p>{`${info.from} - ${info.to}`}</p>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                    </div>) : null}
 
-
-
-                    </div>
-                </div>
                 <div className='workEx'>
                     <h2 className='heading'>
                         Projects

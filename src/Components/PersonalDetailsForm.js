@@ -10,6 +10,8 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
     const [github, setGithub] = useState('');
     const [linkedIn, setLinkedIn] = useState('');
 
+    const [entered, setEntered] = useState(false);
+
     useImperativeHandle(_ref, () => ({
         getPersonalDeets: () => {
             return { fname, lname, email, ph, portfolio, github, linkedIn };
@@ -20,17 +22,29 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
         return /\S+@\S+\.\S+/.test(email);
     }
 
+    function submitHandler(e) {
+        e.preventDefault()
+        setEntered(true)
+
+        if (fname && lname && isValidEmail(email) && ph.length === 10) {
+            props.next()
+        }
+    }
+
     return (
         <div>
             <form>
                 <h3>Enter Personal Details </h3>
-
+                {!fname && entered ? (<span> First Name is required </span>) : null}
                 <input type="text" value={fname} placeholder='First Name*' onChange={e => setFname(e.target.value)} required />
 
+                {!lname && entered ? (<span> Last Name is required </span>) : null}
                 <input type="text" value={lname} placeholder='Last Name*' onChange={e => setLname(e.target.value)} required />
 
+                {!isValidEmail(email) && entered ? (<span> Email is required </span>) : null}
                 <input type="email" value={email} placeholder='Email*' onChange={e => setEmail(e.target.value)} required />
 
+                {!(ph.length === 10) && entered ? (<span> Valid Phone Number is required </span>) : null}
                 <input type="number" value={ph} placeholder='Phone Number*' onChange={e => setPh(e.target.value)} required />
 
                 <input type="text" value={portfolio} placeholder='Portfolio Link' onChange={e => setPortfolio(e.target.value)} />
@@ -41,8 +55,8 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
 
                 <input
                     type='submit'
-                    onClick={props.next}
-                    disabled={!((fname) && (lname) && isValidEmail(email) && (ph.length === 10))} />
+                    onClick={(e) => submitHandler(e)}
+                />
             </form>
         </div>
     )

@@ -5,6 +5,7 @@ const EducationForm = forwardRef((props, _ref) => {
     const [edu, setEdu] = useState([
         { school: '', branch: '', percentage: '', address: '' }
     ]);
+    const [entered, setEntered] = useState(false);
 
     const addHandler = () => {
         let newF = { school: '', branch: '', percentage: '', address: '' }
@@ -38,6 +39,14 @@ const EducationForm = forwardRef((props, _ref) => {
         },
     }));
 
+    const submitHandler = (e) => {
+        e.preventDefault()
+        setEntered(true)
+        if (validateForm(edu)) {
+            props.next()
+        }
+    }
+
     return (
         <div>
 
@@ -46,14 +55,31 @@ const EducationForm = forwardRef((props, _ref) => {
                 {edu.map((input, idx) => {
                     return (
                         <React.Fragment key={idx}>
+
+                            {!input.school && entered ?
+                                (<span> School Name is required </span>) : null}
+
                             <input type='text' placeholder='School/University Name'
                                 value={input.school} name='school' onChange={(e) => handleFormChange(idx, e)} />
+
+                            {!input.branch && entered ?
+                                (<span> Branch is required </span>) : null}
+
                             <input type='text' placeholder='Branch'
                                 value={input.branch} name='branch' onChange={(e) => handleFormChange(idx, e)} />
+
+                            {!input.percentage && entered ?
+                                (<span> Percentage is required </span>) : null}
+
                             <input type='number' placeholder='CGPA/GPA/Percentage'
                                 value={input.percentage} name='percentage' onChange={(e) => handleFormChange(idx, e)} />
+
+                            {!input.address && entered ?
+                                (<span> Address is required </span>) : null}
+
                             <input type='text' placeholder='Address'
                                 value={input.address} name='address' onChange={(e) => handleFormChange(idx, e)} />
+
                             {edu.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
@@ -62,12 +88,14 @@ const EducationForm = forwardRef((props, _ref) => {
                 <button onClick={(e) => {
                     e.preventDefault()
                     addHandler()
-                }}>Add Education</button>
+                }}>
+                    Add Education
+                </button>
 
                 <input
                     type='submit'
-                    onClick={props.next}
-                    disabled={!(validateForm(edu))} />
+                    onClick={(e) => submitHandler(e)}
+                />
 
             </form>
         </div>

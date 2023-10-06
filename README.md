@@ -17,4 +17,4 @@ We welcome contributions from the community to help improve React Resume Builder
 
 - Check out the [Contributing Guidelines](CONTRIBUTING.md) for detailed information on how to get involved.
 
-Chic_ICeCream
+Chic_IceCream

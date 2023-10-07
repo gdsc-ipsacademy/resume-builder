@@ -19,8 +19,10 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
     }));
 
     function isValidEmail(email) {
-        return /\S+@\S+\.\S+/.test(email);
+        const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/;
+        return emailRegex.test(email);
     }
+    
 
     function submitHandler(e) {
         e.preventDefault()

@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+html{
+  background-color:rgb(194, 185, 185);
+}
+.container>div{
+  width:100%;
+  
+} 
+form{
+  background-color: rgb(231, 234, 237);
+  margin:auto;
+  margin-top: 50px;
+  margin-bottom: 80px;
+   width:60%;
+   border-top:4px rgb(8, 86, 233) solid;
+   border-bottom:4px rgb(8, 86, 233) solid;
+   border-radius:10px;
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -74,7 +91,7 @@
 .container form input:focus,
 button {
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(3, 212, 24);
   width: 400px;
   height: 50px;
   margin: 15px 0px;

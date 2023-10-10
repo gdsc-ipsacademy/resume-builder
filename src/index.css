@@ -101,3 +101,16 @@ button {
     /* max-width: 100%; */
   }
 }
+.page{
+font-size:20px;
+font-weight:800;
+color:aliceblue;
+width:60px;
+height:30px;
+background-color:rgb(16, 17, 17);
+border-radius:20px;
+text-align:center;
+ position:fixed; 
+top:30px;
+right:100px;
+}

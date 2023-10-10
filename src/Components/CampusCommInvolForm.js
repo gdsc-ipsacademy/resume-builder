@@ -50,6 +50,7 @@ const CampusCommInvolForm = forwardRef((props, _ref) => {
     return (
         <div>
             <form>
+            <div className="page">5/7</div>
                 <h3> Campus And Community Involvement Details </h3>
                 {invol.map((input, idx) => {
                     return (

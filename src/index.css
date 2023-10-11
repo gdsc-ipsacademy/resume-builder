@@ -101,3 +101,20 @@ button {
     /* max-width: 100%; */
   }
 }
+
+.add{
+  font-size:50px;
+  font-weight:900;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+margin-top:20px;
+border-bottom:4px solid rgb(240, 10, 10);
+color:green;
+}
+.remove{
+  color:red;
+  border-bottom:solid rgb(0, 176, 0) 3px;
+  font-size:20px;
+  font-weight:900;
+}

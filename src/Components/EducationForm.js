@@ -80,16 +80,16 @@ const EducationForm = forwardRef((props, _ref) => {
                             <input type='text' placeholder='Address'
                                 value={input.address} name='address' onChange={(e) => handleFormChange(idx, e)} />
 
-                            {edu.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {edu.length > 1 ? <button className="remove" onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}
 
-                <button onClick={(e) => {
+                <button className="add" onClick={(e) => {
                     e.preventDefault()
                     addHandler()
                 }}>
-                    Add Education
+                    +
                 </button>
 
                 <input

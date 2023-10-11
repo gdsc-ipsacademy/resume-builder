@@ -90,14 +90,14 @@ const ProjectsForm = forwardRef((props, _ref) => {
                             <input type='text' placeholder='Description Point 3'
                                 value={input.bulletPt3} name='bulletPt3' onChange={(e) => handleFormChange(idx, e)} />
 
-                            {projects.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {projects.length > 1 ? <button  className="remove"onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}
-                <button onClick={(e) => {
+                <button className="add" onClick={(e) => {
                     e.preventDefault()
                     addHandler()
-                }}>Add Project</button>
+                }}>+</button>
 
                 <input
                     type='submit'

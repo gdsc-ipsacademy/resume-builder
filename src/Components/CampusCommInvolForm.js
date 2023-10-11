@@ -54,41 +54,42 @@ const CampusCommInvolForm = forwardRef((props, _ref) => {
                 {invol.map((input, idx) => {
                     return (
                         <React.Fragment key={idx}>
-                            {!input.title && entered ?
-                                (<span> Title is required </span>) : null}
 
                             <input type='text' placeholder='Your Title'
                                 value={input.title} name='title' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.title && entered ?
+                                (<span className="warning"> Title is required </span>) : null}
 
-                            {!input.clubName && entered ?
-                                (<span> Club/Organization Name is required </span>) : null}
+
 
                             <input type='text' placeholder='Club/Organization Name'
                                 value={input.clubName} name='clubName' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.clubName && entered ?
+                                (<span className="warning"> Club/Organization Name is required </span>) : null}
 
-                            {!input.from && entered ?
-                                (<span> from is required </span>) : null}
 
                             <input type='text' placeholder='from'
                                 value={input.from} name='from' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.from && entered ?
+                                (<span className="warning"> from is required </span>) : null}
 
-                            {!input.to && entered ?
-                                (<span> to is required </span>) : null}
 
                             <input type='text' placeholder='to'
                                 value={input.to} name='to' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.to && entered ?
+                                (<span className="warning"> to is required </span>) : null}
 
-                            {!input.bulletPt1 && entered ?
-                                (<span> Description Point 1 is required </span>) : null}
 
                             <input type='text' placeholder='Description Point 1'
                                 value={input.bulletPt1} name='bulletPt1' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.bulletPt1 && entered ?
+                                (<span className="warning"> Description Point 1 is required </span>) : null}
 
-                            {!input.bulletPt2 && entered ?
-                                (<span> Description Point 2 is required </span>) : null}
 
                             <input type='text' placeholder='Description Point 2'
                                 value={input.bulletPt2} name='bulletPt2' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.bulletPt2 && entered ?
+                                (<span className="warning"> Description Point 2 is required </span>) : null}
 
                             {invol.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>

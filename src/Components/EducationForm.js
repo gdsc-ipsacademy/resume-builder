@@ -2,6 +2,7 @@ import React, { forwardRef, useImperativeHandle, useState } from 'react'
 
 const EducationForm = forwardRef((props, _ref) => {
 
+    const [errorMessage, setErrorMessage] = useState('');
     const [edu, setEdu] = useState([
         { school: '', branch: '', percentage: '', address: '' }
     ]);
@@ -18,6 +19,15 @@ const EducationForm = forwardRef((props, _ref) => {
     }
 
     const handleFormChange = (idx, e) => {
+        const value = e.target.value;
+        if (value !== '' && e.target.name === "percentage" && (parseFloat(value) < 0 || parseFloat(value) > 10)) {
+            // Display a warning message or handle the error as needed
+            setErrorMessage('Value should be between 0 and 10');
+        }
+        else{
+            setErrorMessage('');
+        }
+
         let data = [...edu]
         data[idx][e.target.name] = e.target.value
         setEdu(data)
@@ -56,29 +66,28 @@ const EducationForm = forwardRef((props, _ref) => {
                     return (
                         <React.Fragment key={idx}>
 
-                            {!input.school && entered ?
-                                (<span> School Name is required </span>) : null}
-
                             <input type='text' placeholder='School/University Name'
                                 value={input.school} name='school' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.school && entered ?
+                                (<span className="warning"> School Name is required </span>) : null}
 
-                            {!input.branch && entered ?
-                                (<span> Branch is required </span>) : null}
 
                             <input type='text' placeholder='Branch'
                                 value={input.branch} name='branch' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.branch && entered ?
+                                (<span className="warning"> Branch is required </span>) : null}
 
-                            {!input.percentage && entered ?
-                                (<span> Percentage is required </span>) : null}
 
                             <input type='number' placeholder='CGPA/GPA/Percentage'
                                 value={input.percentage} name='percentage' onChange={(e) => handleFormChange(idx, e)} />
-
-                            {!input.address && entered ?
-                                (<span> Address is required </span>) : null}
+                            {!input.percentage && entered ?
+                                (<span className="warning"> Percentage is required </span>) : null}
+                            <span className="warning">{errorMessage}</span>
 
                             <input type='text' placeholder='Address'
                                 value={input.address} name='address' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.address && entered ?
+                                (<span className="warning"> Address is required </span>) : null}
 
                             {edu.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>

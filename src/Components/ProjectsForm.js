@@ -54,41 +54,40 @@ const ProjectsForm = forwardRef((props, _ref) => {
                     return (
                         <React.Fragment key={idx}>
 
-                            {!input.name && entered ?
-                                (<span> Project Name is required </span>) : null}
 
                             <input type='text' placeholder='Project Name'
                                 value={input.name} name='name' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.name && entered ?
+                                (<span className="warning"> Project Name is required </span>) : null}
 
-                            {!input.from && entered ?
-                                (<span> from is required </span>) : null}
 
                             <input type='text' placeholder='from'
                                 value={input.from} name='from' onChange={(e) => handleFormChange(idx, e)} />
-
-                            {!input.to && entered ?
-                                (<span> to is required </span>) : null}
+                            {!input.from && entered ?
+                                (<span className="warning"> from is required </span>) : null}
 
                             <input type='text' placeholder='to'
                                 value={input.to} name='to' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.to && entered ?
+                                (<span className="warning"> to is required </span>) : null}
 
-                            {!input.bulletPt1 && entered ?
-                                (<span> Description Point 1 is required </span>) : null}
 
                             <input type='text' placeholder='Description Point 1'
                                 value={input.bulletPt1} name='bulletPt1' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.bulletPt1 && entered ?
+                                (<span className="warning"> Description Point 1 is required </span>) : null}
 
-                            {!input.bulletPt2 && entered ?
-                                (<span> Description Point 2 is required </span>) : null}
 
                             <input type='text' placeholder='Description Point 2'
                                 value={input.bulletPt2} name='bulletPt2' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.bulletPt2 && entered ?
+                                (<span className="warning"> Description Point 2 is required </span>) : null}
 
-                            {!input.bulletPt3 && entered ?
-                                (<span> Description Point 3 is required </span>) : null}
 
                             <input type='text' placeholder='Description Point 3'
                                 value={input.bulletPt3} name='bulletPt3' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.bulletPt3 && entered ?
+                                (<span className="warning"> Description Point 3 is required </span>) : null}
 
                             {projects.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>

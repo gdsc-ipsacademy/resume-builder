@@ -37,17 +37,19 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
         <div>
             <form>
                 <h3>Enter Personal Details </h3>
-                {!fname && entered ? (<span> First Name is required </span>) : null}
+                
                 <input type="text" value={fname} placeholder='First Name*' onChange={e => setFname(e.target.value)} required />
+                {!fname && entered ? (<span className="warning"> First Name is required </span>) : null}
 
-                {!lname && entered ? (<span> Last Name is required </span>) : null}
+                
                 <input type="text" value={lname} placeholder='Last Name*' onChange={e => setLname(e.target.value)} required />
-
-                {!isValidEmail(email) && entered ? (<span> Email is required </span>) : null}
+                {!lname && entered ? (<span className="warning"> Last Name is required </span>) : null}
+               
                 <input type="email" value={email} placeholder='Email*' onChange={e => setEmail(e.target.value)} required />
-
-                {!(ph.length === 10) && entered ? (<span> Valid Phone Number is required </span>) : null}
+                {!isValidEmail(email) && entered ? (<span className="warning"> Email is required </span>) : null}
+                
                 <input type="number" value={ph} placeholder='Phone Number*' onChange={e => setPh(e.target.value)} required />
+                {!(ph.length === 10) && entered ? (<span className="warning"> Valid Phone Number is required </span>) : null}
 
                 <input type="text" value={portfolio} placeholder='Portfolio Link' onChange={e => setPortfolio(e.target.value)} />
 

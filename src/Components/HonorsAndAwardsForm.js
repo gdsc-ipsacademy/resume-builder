@@ -52,17 +52,18 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
                 {awards.map((input, idx) => {
                     return (
                         <React.Fragment key={idx}>
-                            {!input.title && entered ?
-                                (<span> Title is required </span>) : null}
+
 
                             <input type='text' placeholder='Name of Honor/Award/Grant'
                                 value={input.title} name='title' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.title && entered ?
+                                (<span className="warning"> Title is required </span>) : null}
 
-                            {!input.date && entered ?
-                                (<span> Date is required </span>) : null}
 
                             <input type='text' placeholder='Date'
                                 value={input.date} name='date' onChange={(e) => handleFormChange(idx, e)} />
+                            {!input.date && entered ?
+                                (<span className="warning"> Date is required </span>) : null}
 
 
                             {awards.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}

@@ -103,7 +103,7 @@ const WorkExperienceForm = forwardRef((props, _ref) => {
                             <input type='text' placeholder='Description Point 3'
                                 value={input.bulletPt3} name='bulletPt3' onChange={(e) => handleFormChange(idx, e)} />
 
-                            {workEx.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {workEx.length > 1 ? <button className="remove-btn" onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}

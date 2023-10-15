@@ -65,7 +65,7 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
                                 value={input.date} name='date' onChange={(e) => handleFormChange(idx, e)} />
 
 
-                            {awards.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {awards.length > 1 ? <button className="remove-btn" onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}

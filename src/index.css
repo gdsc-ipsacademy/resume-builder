@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 html{
-  background-color:rgb(194, 185, 185);
+  background-color:rgb(217, 213, 213);
 }
 .container>div{
   width:100%;
   
 } 
 form{
-  background-color: rgb(231, 234, 237);
+  background-color: rgb(203, 209, 216);
   margin:auto;
   margin-top: 50px;
   margin-bottom: 80px;
@@ -84,6 +84,7 @@ form{
   justify-content: center;
   align-items: center;
   padding: 10px;
+  
 }
 
 .container form input,
@@ -116,4 +117,9 @@ button {
     width: 400px;
     /* max-width: 100%; */
   }
+}
+.remove-btn{
+  margin-top:-10px;
+  margin-bottom:48px;
+  background-color: rgb(188, 236, 236);
 }

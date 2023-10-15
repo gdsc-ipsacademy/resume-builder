@@ -47,7 +47,7 @@ const SkillsForm = forwardRef((props, _ref) => {
                                 value={input.title} name='title' onChange={(e) => handleFormChange(idx, e)} />
 
 
-                            {skills.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {skills.length > 1 ? <button className="remove-btn" onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}

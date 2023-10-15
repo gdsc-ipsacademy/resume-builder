@@ -48,6 +48,7 @@ const HonorsAndAwardsForm = forwardRef((props, _ref) => {
     return (
         <div>
             <form>
+            <div className="page">7/7</div>
                 <h3>Honors And Awards Details</h3>
                 {awards.map((input, idx) => {
                     return (

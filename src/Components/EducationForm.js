@@ -57,8 +57,9 @@ const EducationForm = forwardRef((props, _ref) => {
                         <React.Fragment key={idx}>
 
                             {!input.school && entered ?
-                                (<span> School Name is required </span>) : null}
 
+                                (<span> School Name is required </span>) : null}
+                            <div className="page">2/7</div>
                             <input type='text' placeholder='School/University Name'
                                 value={input.school} name='school' onChange={(e) => handleFormChange(idx, e)} />
 

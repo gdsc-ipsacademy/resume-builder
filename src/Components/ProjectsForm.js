@@ -49,6 +49,7 @@ const ProjectsForm = forwardRef((props, _ref) => {
     return (
         <div>
             <form>
+            <div className="page">4/7</div>
                 <h3>Projects Details</h3>
                 {projects.map((input, idx) => {
                     return (

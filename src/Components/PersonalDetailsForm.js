@@ -36,7 +36,8 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
     return (
         <div>
             <form>
-                <h3>Enter Personal Details </h3>
+                <div className="page">1/7</div>
+                    <h3>Enter Personal Details </h3>
                 {!fname && entered ? (<span> First Name is required </span>) : null}
                 <input type="text" value={fname} placeholder='First Name*' onChange={e => setFname(e.target.value)} required />
 

@@ -39,6 +39,7 @@ const SkillsForm = forwardRef((props, _ref) => {
     return (
         <div>
             <form>
+            <div className="page">6/7</div>
                 <h3>Skills Details</h3>
                 {skills.map((input, idx) => {
                     return (

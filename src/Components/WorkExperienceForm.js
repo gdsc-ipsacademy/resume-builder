@@ -50,6 +50,7 @@ const WorkExperienceForm = forwardRef((props, _ref) => {
     return (
         <div>
             <form>
+            <div className="page">3/7</div>
                 <h3>Work Experience Details </h3>
                 {workEx.map((input, idx) => {
                     return (

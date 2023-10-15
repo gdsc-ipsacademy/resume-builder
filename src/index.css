@@ -117,3 +117,8 @@ button {
     /* max-width: 100%; */
   }
 }
+.remove-btn{
+  margin-top:-10px;
+  margin-bottom:48px;
+  background-color: rgb(188, 236, 236);
+}

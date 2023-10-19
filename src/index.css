@@ -101,6 +101,7 @@
     transition-duration: 1s;
 }
 
+
 .container {
   display: flex;
   flex-direction: column;
@@ -160,6 +161,21 @@ button {
     width: 200px;
   
 }
+
+.container form input,
+.container form input:focus {
+  width: 100%;
+  /* max-width: 100%; */
+}
+
+@media screen and (min-width: 500px) {
+  .container form input,
+  .container form input:focus {
+    width: 400px;
+    /* max-width: 100%; */
+  }
+}
+
 
 .container form input,
 .container form input:focus {

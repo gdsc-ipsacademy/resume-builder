@@ -1,55 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .personal-header {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .personal-header p {
-    margin-right: 28px;
-    font-size: 14px;
+  margin-right: 28px;
+  font-size: 14px;
 }
 
 .education,
 .workEx {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 50px;
 }
 
 .info {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .skillsCont {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .skillsCont p {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
 .pdf-resume p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .pdf-resume h2 {
-    font-size: 20px;
-    margin: 10px 0px;
+  font-size: 20px;
+  margin: 10px 0px;
 }
 
 .heading {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 /* ADD BUTTON  */
@@ -102,34 +102,34 @@
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container form {
-    /* border: 2px solid red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .container form input,
 .container form input:focus,
 button {
-    border: none;
-    border-bottom: 2px solid black;
-    width: 400px;
-    height: 50px;
-    margin: 15px 0px;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 400px;
+  height: 50px;
+  margin: 15px 0px;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
 }
 
 button {
@@ -158,5 +158,19 @@ button {
 .submit-btn:hover {
     transition-duration: 1s;
     width: 200px;
-    color: blue;
+  
+}
+
+.container form input,
+.container form input:focus {
+  width: 100%;
+  /* max-width: 100%; */
+}
+
+@media screen and (min-width: 500px) {
+  .container form input,
+  .container form input:focus {
+    width: 400px;
+    /* max-width: 100%; */
+  }
 }

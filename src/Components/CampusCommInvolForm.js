@@ -90,16 +90,17 @@ const CampusCommInvolForm = forwardRef((props, _ref) => {
                             <input type='text' placeholder='Description Point 2'
                                 value={input.bulletPt2} name='bulletPt2' onChange={(e) => handleFormChange(idx, e)} />
 
-                            {invol.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {invol.length > 1 ? <button className='remove' onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}
-                <button onClick={(e) => {
+                <button className="add" onClick={(e) => {
                     e.preventDefault()
                     addHandler()
                 }}>Add Involvement Experience</button>
 
                 <input
+                className='submit-btn'
                     type='submit'
                     onClick={e => submitHandler(e)}
                 />

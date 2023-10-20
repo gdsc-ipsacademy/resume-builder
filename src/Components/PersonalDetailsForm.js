@@ -56,6 +56,7 @@ const PersonalDetailsForm = forwardRef((props, _ref) => {
                 <input type="text" value={linkedIn} placeholder='LinkedIn Link' onChange={e => setLinkedIn(e.target.value)} />
 
                 <input
+                className='submit-btn'
                     type='submit'
                     onClick={(e) => submitHandler(e)}
                 />

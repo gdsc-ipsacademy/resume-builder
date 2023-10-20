@@ -47,16 +47,17 @@ const SkillsForm = forwardRef((props, _ref) => {
                                 value={input.title} name='title' onChange={(e) => handleFormChange(idx, e)} />
 
 
-                            {skills.length > 1 ? <button onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
+                            {skills.length > 1 ? <button className="remove" onClick={(e) => { e.preventDefault(); removeHandler(idx) }}>Remove</button> : <></>}
                         </React.Fragment>
                     )
                 })}
-                <button onClick={(e) => {
+                <button className="add" onClick={(e) => {
                     e.preventDefault()
                     addHandler()
                 }}>Add Skills</button>
 
                 <input
+                className='submit-btn'
                     type='submit'
                     onClick={props.next}
                     disabled={!(validateForm(skills))} />

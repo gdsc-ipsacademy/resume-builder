@@ -130,7 +130,7 @@ const FormContainer = () => {
                 return (<>
                     <ResumeRender />
                     <ReactToPrint
-                        trigger={() => <button>Download this out!</button>}
+                        trigger={() => <button className='download'> Download this out!</button>}
                         content={() => componentRef}
                     />
                 </>)

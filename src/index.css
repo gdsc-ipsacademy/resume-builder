@@ -52,6 +52,56 @@
   border-bottom: 1px solid black;
 }
 
+/* ADD BUTTON  */
+.add {
+    letter-spacing: 0.5px;
+    background: #000;
+    border: 0;
+    color: green;
+    text-transform: uppercase;
+    font-family: helvetica;
+    font-size: 12px;
+}
+
+.add:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid black;
+    transition-duration: 1s;
+}
+
+/* DOWNLOAD BUTTON Similar to Submit btn */
+.download {
+    width: auto;
+    background: #000;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: helvetica;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* REMOVE BUTTON  */
+.remove {
+    letter-spacing: 0.5px;
+    padding: 15px 40px;
+    background: #000;
+    border: 0;
+    color: red;
+    text-transform: uppercase;
+    font-family: helvetica;
+    font-size: 12px;
+}
+
+.remove:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid black;
+    transition-duration: 1s;
+}
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -84,9 +134,48 @@ button {
 }
 
 button {
-  width: 200px;
-  margin: auto;
+    border: 2px solid black;
+    width: 200px;
+    margin: auto;
+    margin-top: 2px;
 }
+
+/* SUBMIT BUTTON*/
+
+.submit-btn {
+    padding: 15px 40px;
+    background: #000;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: helvetica;
+    font-size: 12px;
+    letter-spacing: 3px;
+    transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    cursor: pointer;
+    margin: 100px auto;
+}
+
+.submit-btn:hover {
+    transition-duration: 1s;
+    width: 200px;
+  
+}
+
+.container form input,
+.container form input:focus {
+  width: 100%;
+  /* max-width: 100%; */
+}
+
+@media screen and (min-width: 500px) {
+  .container form input,
+  .container form input:focus {
+    width: 400px;
+    /* max-width: 100%; */
+  }
+}
+
 
 .container form input,
 .container form input:focus {

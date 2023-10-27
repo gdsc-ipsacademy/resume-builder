@@ -190,3 +190,10 @@ button {
     /* max-width: 100%; */
   }
 }
+
+.container form span {
+  background-color: rgba(239, 68, 68, 0.75);  
+  border-radius: 0.25rem;
+  padding: 5px;
+}
+
